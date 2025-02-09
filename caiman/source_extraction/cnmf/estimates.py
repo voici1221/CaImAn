@@ -664,8 +664,8 @@ class Estimates(object):
         else:
             mov = caiman.concatenate((imgs - (not include_bck) * B,
                                       Y_rec + include_bck * B, Y_res * gain_res), axis=2)
-        if not display:
-            return mov
+        # if not display:
+        #     return mov
 
         if thr > 0:
             if save_movie:
