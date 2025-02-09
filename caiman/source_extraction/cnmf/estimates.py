@@ -664,8 +664,8 @@ class Estimates(object):
         else:
             mov = caiman.concatenate((imgs - (not include_bck) * B,
                                       Y_rec + include_bck * B, Y_res * gain_res), axis=2)
-        if not display:
-            return mov
+        # if not display:
+        #     return mov
 
         if thr > 0:
             if save_movie:
@@ -699,7 +699,7 @@ class Estimates(object):
                     frame = np.repeat(frame[..., None], 3, 2)
                 for contour in contours:
                     cv2.drawContours(frame, contour, -1, (0, 255, 255), 1)
-                cv2.imshow('frame', frame.astype('uint8'))
+                # cv2.imshow('frame', frame.astype('uint8'))
                 if save_movie:
                     out.write(frame.astype('uint8'))
                 if cv2.waitKey(30) & 0xFF == ord('q'):
