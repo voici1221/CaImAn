@@ -699,7 +699,7 @@ class Estimates(object):
                     frame = np.repeat(frame[..., None], 3, 2)
                 for contour in contours:
                     cv2.drawContours(frame, contour, -1, (0, 255, 255), 1)
-                cv2_imshow('frame', frame.astype('uint8'))
+                cv2.imshow('frame', frame.astype('uint8'))
                 if save_movie:
                     out.write(frame.astype('uint8'))
                 if cv2.waitKey(30) & 0xFF == ord('q'):
